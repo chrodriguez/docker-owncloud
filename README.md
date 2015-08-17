@@ -1,5 +1,8 @@
 # Owncloud container
 
+Owncloud can be run as other user than www-data if you set USER_ID environment
+variable
+
 ## Example
 
 ```
@@ -10,6 +13,5 @@ docker run -e USER_ID=`id -u` \
   -d \
   --name=owncloud \
   chrodriguez/owncloud
-
 ```
 
