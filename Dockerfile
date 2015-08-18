@@ -26,6 +26,7 @@ RUN apt-get -y autoremove && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /tmp/*
 
+RUN rm -f /var/www/html/index.html
 
 VOLUME ["/etc/owncloud", "/var/www/owncloud/data/"]
 
