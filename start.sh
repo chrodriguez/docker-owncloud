@@ -17,8 +17,9 @@ if [ ! "$(ls -A $DIR)" ]; then
   chown $APACHE_RUN_USER $DIR $DATA
   cp -p /var/www/owncloud/config/.htaccess $DIR
   cp -pr /var/www/owncloud/config/* $DIR
-  rm -fr /var/www/owncloud/config/
-  ln -s $DIR /var/www/owncloud/config
 fi
+
+rm -fr /var/www/owncloud/config/
+ln -s $DIR /var/www/owncloud/config
 
 apache2 -DFOREGROUND
