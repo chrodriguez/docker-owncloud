@@ -16,10 +16,8 @@ RUN echo 'deb http://download.opensuse.org/repositories/isv:/ownCloud:/community
     cd /tmp && \
     wget http://download.opensuse.org/repositories/isv:ownCloud:community/xUbuntu_14.04/Release.key && \
     apt-key add - < Release.key
-RUN apt-get -y update && apt-get -y dist-upgrade
-
-RUN apt-get install -y owncloud
-RUN apt-get install -y php-apc
+RUN apt-get -y update && apt-get -y dist-upgrade && apt-get install -y owncloud php5-dev \
+    libpcre3-dev && pecl channel-update pecl.php.net && pecl install channel://pecl.php.net/apcu-4.0.7
 
 RUN apt-get -y autoremove && \
     apt-get -y clean && \
