@@ -19,6 +19,6 @@ if [ ! "$(ls -A $DIR)" ]; then
   cp -pr /var/www/owncloud/config/* $DIR
 fi
 
-[ -L /var/www/owncloud/config] || ( rm -fr /var/www/owncloud/config && ln -s $DIR /var/www/owncloud/config )
+[ -L /var/www/owncloud/config ] || ( rm -fr /var/www/owncloud/config && ln -s $DIR /var/www/owncloud/config )
 
 apache2 -DFOREGROUND
